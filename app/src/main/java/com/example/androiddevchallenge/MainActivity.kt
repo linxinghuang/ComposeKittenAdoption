@@ -33,7 +33,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.data.Cat
 import com.example.androiddevchallenge.ui.theme.MyTheme
-import com.example.androiddevchallenge.viewmodel.MainViewModel
 import kotlinx.coroutines.launch
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SnackbarHost

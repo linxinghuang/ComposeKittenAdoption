@@ -1,4 +1,4 @@
-package com.example.androiddevchallenge.viewmodel
+package com.example.androiddevchallenge
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
