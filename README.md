@@ -8,9 +8,9 @@
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
 It's a compost Kitten adoption app, for the #AndroidDevChallenge of Jetpack Compose.
-1-list some cute kitten which can be adopted.
-2-click one item ,you can see this kitten's detail
-3-int detail page,you can adopt this kitten by click the adoption button.
+-1-list some cute kitten which can be adopted.
+-2-click one item ,you can see this kitten's detail
+-3-int detail page,you can adopt this kitten by click the adoption button.
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
