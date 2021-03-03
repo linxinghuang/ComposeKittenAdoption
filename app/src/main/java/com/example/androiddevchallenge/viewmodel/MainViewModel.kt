@@ -86,7 +86,7 @@ class MainViewModel : ViewModel() {
             )
     )
 
-    var currentCat: Cat? by mutableStateOf(cats[0])
+    var currentCat: Cat? by mutableStateOf(null)
 
 
     fun showDetails(cat: Cat) {
