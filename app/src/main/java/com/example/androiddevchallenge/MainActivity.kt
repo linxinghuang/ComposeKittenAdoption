@@ -17,6 +17,7 @@ package com.example.androiddevchallenge
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -54,12 +55,22 @@ import androidx.compose.material.Button
 import androidx.compose.material.ProvideTextStyle
 
 class MainActivity : AppCompatActivity() {
+    private val viewModel by viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
                 MyApp()
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        if (viewModel.currentCat != null) {
+            viewModel.closeDetails()
+        } else {
+            super.onBackPressed()
         }
     }
 }
@@ -169,3 +180,4 @@ fun CatDetails(cat: Cat, onClick: (Cat) -> Unit = {}) {
         }
     }
 }
+

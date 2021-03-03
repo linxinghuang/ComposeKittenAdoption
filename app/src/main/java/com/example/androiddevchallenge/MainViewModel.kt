@@ -3,7 +3,6 @@ package com.example.androiddevchallenge
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.data.Cat
 import androidx.compose.runtime.setValue
 
