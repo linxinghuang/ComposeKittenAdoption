@@ -22,8 +22,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Button
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.ProvideTextStyle
+import androidx.compose.material.Scaffold
+import androidx.compose.material.SnackbarHost
+import androidx.compose.material.SnackbarHostState
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -35,24 +53,6 @@ import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.data.Cat
 import com.example.androiddevchallenge.ui.theme.MyTheme
 import kotlinx.coroutines.launch
-import androidx.compose.material.Scaffold
-import androidx.compose.material.SnackbarHost
-import androidx.compose.material.SnackbarHostState
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Button
-import androidx.compose.material.ProvideTextStyle
 
 class MainActivity : AppCompatActivity() {
     private val viewModel by viewModels<MainViewModel>()
@@ -90,7 +90,8 @@ fun MyApp() {
         },
         snackbarHost = {
             SnackbarHost(snackBarHostState)
-        }) {
+        }
+    ) {
 
         val viewModel = MainViewModel()
         CatList(viewModel)
@@ -118,7 +119,8 @@ fun CatList(viewModel: MainViewModel) {
                         if (viewModel.currentCat == null) {
                             viewModel.showDetails(cat)
                         }
-                    }) {
+                    }
+            ) {
                 Box {
                     Image(
                         painterResource(cat.photo),
@@ -128,7 +130,6 @@ fun CatList(viewModel: MainViewModel) {
                             .height(240.dp),
                         contentScale = ContentScale.Crop
                     )
-
 
                     Column(Modifier.padding(paddingValues = PaddingValues(start = 5.dp))) {
                         Text(cat.name, color = Color.White, style = MaterialTheme.typography.h4)
@@ -180,4 +181,3 @@ fun CatDetails(cat: Cat, onClick: (Cat) -> Unit = {}) {
         }
     }
 }
-
