@@ -155,5 +155,3 @@ fun CatDetails(cat: Cat, onClick: (Cat) -> Unit = {}) {
         }
     }
 }
-
-
